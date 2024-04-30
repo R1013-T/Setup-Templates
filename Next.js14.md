@@ -15,11 +15,12 @@ bunx create-next-app@latest
 ### ライブラリのインストール
 
 ```bash
-bun add -D @typescript-eslint/eslint-plugin eslint-config-prettier eslint-plugin-simple-import-sort prettier npm-run-all
+bun add -D @typescript-eslint/eslint-plugin eslint-config-prettier eslint-plugin-simple-import-sort prettier npm-run-all prettier-plugin-tailwindcss
 ```
 
 ### ESLintの設定
 
+`.eslintrc.json`
 ```json
 {
   "extends": ["next/core-web-vitals", "prettier"],
@@ -36,7 +37,7 @@ bun add -D @typescript-eslint/eslint-plugin eslint-config-prettier eslint-plugin
 ```
 
 ### Prettierの設定
-
+`.prettierignore`
 ```
 node_modules
 .next
@@ -44,10 +45,12 @@ bun.lockb
 public
 ```
 
+`.prettierrc`
 ```json
 {
   "semi": false,
-  "singleQuote": true
+  "singleQuote": true,
+  "plugins": ["prettier-plugin-tailwindcss"]
 }
 ```
 
@@ -69,7 +72,7 @@ public
     "format:eslint": "bun run lint:eslint --fix",
     "format:prettier": "bun run lint:prettier --write",
     "typecheck": "tsc"
-		/// ▲ ▲ ▲
+    /// ▲ ▲ ▲
   },
 
   ...

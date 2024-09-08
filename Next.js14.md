@@ -122,6 +122,7 @@ bun lint-staged
 bun run build
 ```
 
+`.lintstagedrc`
 ```bash
 {
   "**/*.{js,jsx,ts,tsx}": ["prettier --write", "eslint --fix"]
